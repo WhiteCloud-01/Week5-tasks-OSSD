@@ -1,0 +1,6 @@
+raw_temps = [22.5, "ERR", 18.0, None, 30.2, "ERR", 0.0]
+
+# Extract valid numeric readings, convert Celsius to Fahrenheit, and round to 1 decimal place
+fahrenheit_temps = [round(t * 1.8 + 32, 1) for t in raw_temps if isinstance(t, (int, float))]
+
+print(fahrenheit_temps)
