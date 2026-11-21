@@ -1,0 +1,9 @@
+players = [("Aria", 88, True), ("Kael", 95, False), ("Zane", 91, True), ("Mira", 76, True), ("Lyra", 99, True), ("Dax", 84, True)]
+
+# Filter active players, sort by score descending, and keep top 3
+active_sorted = sorted([p for p in players if p[2]], key=lambda x: x[1], reverse=True)[:3]
+
+# Format each entry as "Rank <n>: <username> (<score>)"
+leaderboard = [f"Rank {rank}: {name} ({score})" for rank, (name, score, _) in enumerate(active_sorted, start=1)]
+
+print(leaderboard)
